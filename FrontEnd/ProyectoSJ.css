@@ -1,0 +1,149 @@
+body {
+    background-color: #f8f9fa;
+    background-image: url("https://p4.wallpaperbetter.com/wallpaper/586/603/742/minimalism-4k-for-mac-desktop-wallpaper-preview.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container, .card{
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    color: #333; 
+}
+
+p {
+    color: #666; 
+}
+
+
+header {
+    background-color: #87B8EA;
+    color: #fff;
+    padding: 40px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+#pasos {
+    margin-top: 50px;
+    
+}
+
+.paso {
+    text-align: center;
+    margin: 20px 0;
+    
+    
+}
+
+.paso i {
+    font-size: 3em;
+    color: #28a745;
+    
+}
+
+.paso h2 {
+    margin-top: 10px;
+    color:black
+}
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#funciones {
+    background-color: rgba(255, 255, 255, 0.8); 
+    border: 1px solid #dee2e6;
+    padding: 50px 0;
+    
+}
+
+.section-title {
+    color: #333;
+}
+
+.funcion {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.funcion h3 {
+    color: black;
+}
+header {
+    background-color: #87B8EA;
+    color: #fff;
+    padding: 40px 0;
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+#pasos {
+    margin-top: 50px;
+    
+}
+
+.paso {
+    text-align: center;
+    margin: 20px 0;
+    
+    
+}
+
+.paso i {
+    font-size: 3em;
+    color: #28a745;
+    
+}
+
+.paso h2 {
+    margin-top: 10px;
+    color:black
+}
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#funciones {
+    background-color: rgba(255, 255, 255, 0.8); 
+    border: 1px solid #dee2e6;
+    padding: 50px 0;
+    
+}
+
+.section-title {
+    color: #333;
+}
+
+.funcion {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.funcion h3 {
+    color: black;
+}

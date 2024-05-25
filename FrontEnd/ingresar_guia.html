@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Guía</title>
+    <link rel="stylesheet" href="Styles_Form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ingresar Guía</h1>
+        <form id="form-ingresar" class="formulario">
+            <div class="form-group">
+                <label for="Num_guia">Número de Guía:</label>
+                <input type="number" id="Num_guia" name="Num_guia" required>
+            </div>
+            <div class="form-group">
+                <label for="Nom_remitente">Nombre del Remitente:</label>
+                <input type="text" id="Nom_remitente" name="Nom_remitente" required>
+            </div>
+            <div class="form-group">
+                <label for="Id_remitente">ID del Remitente:</label>
+                <input type="number" id="Id_remitente" name="Id_remitente" required>
+            </div>
+            <div class="form-group">
+                <label for="Origen">Origen:</label>
+                <input type="text" id="Origen" name="Origen" required>
+            </div>
+            <div class="form-group">
+                <label for="Nom_destinatario">Nombre del Destinatario:</label>
+                <input type="text" id="Nom_destinatario" name="Nom_destinatario" required>
+            </div>
+            <div class="form-group">
+                <label for="Id_destinatario">ID del Destinatario:</label>
+                <input type="number" id="Id_destinatario" name="Id_destinatario" required>
+            </div>
+            <div class="form-group">
+                <label for="Destino">Destino:</label>
+                <input type="text" id="Destino" name="Destino" required>
+            </div>
+            <div class="form-group">
+                <label for="Tipo_mercancia">Tipo de Mercancía:</label>
+                <input type="text" id="Tipo_mercancia" name="Tipo_mercancia" required>
+            </div>
+            <div class="form-group">
+                <label for="kilos">Kilos:</label>
+                <input type="number" id="kilos" name="kilos" required>
+            </div>
+            <div class="form-group">
+                <label for="flete">Flete:</label>
+                <input type="number" id="flete" name="flete" required>
+            </div>
+            <div class="form-group">
+                <label for="total">Total:</label>
+                <input type="number" id="total" name="total" required>
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const form = document.getElementById('form-ingresar');
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const Num_guia = parseInt(document.getElementById('Num_guia').value);
+            const Nom_remitente = document.getElementById('Nom_remitente').value;
+            const Id_remitente = parseInt(document.getElementById('Id_remitente').value);
+            const Origen = document.getElementById('Origen').value;
+            const Nom_destinatario = document.getElementById('Nom_destinatario').value;
+            const Id_destinatario = parseInt(document.getElementById('Id_destinatario').value);
+            const Destino = document.getElementById('Destino').value;
+            const Tipo_mercancia = document.getElementById('Tipo_mercancia').value;
+            const kilos = parseInt(document.getElementById('kilos').value);
+            const flete = parseInt(document.getElementById('flete').value);
+            const total = parseInt(document.getElementById('total').value);
+
+            const postData = {
+                Num_guia: Num_guia,
+                Nom_remitente: Nom_remitente,
+                Id_remitente: Id_remitente,
+                Origen: Origen,
+                Nom_destinatario: Nom_destinatario,
+                Id_destinatario: Id_destinatario,
+                Destino: Destino,
+                Tipo_mercancia: Tipo_mercancia,
+                kilos: kilos,
+                flete: flete,
+                total: total
+            };
+
+            axios.post('http://localhost:8000/guia/crear', postData)
+                .then(function (response){
+                    console.log(response.data);
+                    alert('Guía creada: ' + JSON.stringify(response.data));
+                })
+                .catch(function (error){
+                    console.error('Error al crear la guía: ', error);
+                    alert('Error al crear la guía: ' + error.message);
+                });
+        });
+    </script>
+</body>
+</html>

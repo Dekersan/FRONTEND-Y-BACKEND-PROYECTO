@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Guía</title>
+    <link rel="stylesheet" href="Styles_Form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Modificar Guía</h1>
+        <form id="form-modificar" class="formulario" action="#" method="post">
+            <div class="form-group">
+                <label for="Num_guia">Número de Guía:</label>
+                <input type="number" id="Num_guia" name="Num_guia" required>
+            </div>
+            <div class="form-group">
+                <label for="total">Total:</label>
+                <input type="number" id="total" name="total" required>
+            </div>
+            <button type="submit">Modificar</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('form-modificar').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const numGuia = document.getElementById('Num_guia').value;
+            const total = document.getElementById('total').value;
+            try {
+                const response = await axios.post('http://localhost:8000/guia/modificar_total', {
+                    Num_guia: numGuia,
+                    Nuevo_total: total
+                });
+
+                if (response.status === 200) {
+                    alert('Guía modificada con éxito');
+                } else {
+                    alert('Error al modificar la guía');
+                }
+            } catch (error) {
+                console.error('Error al modificar la guía: ', error);
+                alert('Error al modificar la guía: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

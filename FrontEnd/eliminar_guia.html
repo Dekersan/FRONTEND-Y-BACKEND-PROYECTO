@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Guía</title>
+    <link rel="stylesheet" href="Styles_Form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Eliminar Guía</h1>
+        <form id="form-eliminar" class="formulario" action="#" method="post">
+            <div class="form-group">
+                <label for="Num_guia">Número de Guía:</label>
+                <input type="text" id="Num_guia" name="Num_guia" required>
+            </div>
+            <button type="button" onclick="eliminarGuia()">Eliminar</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function eliminarGuia() {
+            var numeroGuia = document.getElementById('Num_guia').value;
+
+            try {
+                const response = await axios.delete('http://localhost:8000/guia/eliminar', {
+                    data: {
+                        Num_guia: numeroGuia
+                    }
+                });
+
+                if (response.status === 200) {
+                    alert('Guía eliminada correctamente');
+                } else {
+                    alert('Error al eliminar la guía');
+                }
+            } catch (error) {
+                console.error('Error al eliminar la guía: ', error);
+                alert('Error al eliminar la guía: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
